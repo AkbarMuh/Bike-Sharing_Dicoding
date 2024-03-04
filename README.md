@@ -37,13 +37,9 @@ Proyek ini bertujuan untuk menganalisis data penggunaan sepeda menggunakan Pytho
 
 ## Demo Aplikasi
 
-Anda dapat mencoba demo aplikasi secara langsung di [sini](https://bike-sharingdicoding.streamlit.app/).
+Anda dapat mencoba demo aplikasi secara langsung di [(https://bike-sharingdicoding.streamlit.app/)](https://bike-sharingdicoding.streamlit.app/).
 
 ## Kontribusi
 
 Kontribusi terhadap pengembangan proyek ini sangat dipersilakan. Anda dapat melakukan fork dari repositori ini, menambahkan fitur, memperbaiki bug, atau meningkatkan dokumentasi sesuai kebutuhan.
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah lisensi [MIT License](https://opensource.org/licenses/MIT).
 
