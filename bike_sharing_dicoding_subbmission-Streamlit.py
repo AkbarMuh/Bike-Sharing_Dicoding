@@ -56,9 +56,9 @@ if file is not None or st.session_state.use_default_data:
     # Data Wrangling
     st.subheader("Data Wrangling")
     st.write("Informasi Dataset:")
-    st.dataframe(df.info())
+    st.write(df.info())
     st.write("\nBeberapa Baris Pertama Dataset:")
-    st.dataframe(df.head())
+    st.write(df.head())
     missing_values = df.isnull().sum()
     st.write("\nJumlah Missing Values per Kolom:")
     st.write(missing_values)
@@ -67,10 +67,17 @@ if file is not None or st.session_state.use_default_data:
 
     # Exploratory Data Analysis (EDA)
     st.subheader("Exploratory Data Analysis (EDA)")
-    # Distribusi Data
+
+    # Handle the date column separately
+    date_col = 'dteday'
+
+    # Convert the date column to datetime
+    df[date_col] = pd.to_datetime(df[date_col])
+
+    # Distribusi Data Variabel Numerik
     st.write("Distribusi Data Variabel Numerik:")
     fig, ax = plt.subplots(figsize=(15, 10))
-    sns.boxplot(data=df[['temp', 'atemp', 'hum', 'windspeed']], ax=ax)
+    sns.boxplot(data=df.drop(columns=[date_col]), ax=ax)
     ax.set_title('Distribusi Data Variabel Numerik')
     ax.set_xlabel('Variabel')
     ax.set_ylabel('Nilai')
@@ -79,7 +86,7 @@ if file is not None or st.session_state.use_default_data:
     # Korelasi antar fitur numerik
     st.write("Korelasi antar Fitur Numerik:")
     fig, ax = plt.subplots(figsize=(12, 8))
-    sns.heatmap(df.corr(), annot=True, cmap='coolwarm', linewidths=0.5, ax=ax)
+    sns.heatmap(df.drop(columns=[date_col]).corr(), annot=True, cmap='coolwarm', linewidths=0.5, ax=ax)
     ax.set_title('Korelasi antar Fitur Numerik')
     st.pyplot(fig)
 
@@ -95,7 +102,7 @@ if file is not None or st.session_state.use_default_data:
     # Melihat tren penggunaan sepeda seiring waktu
     st.write("Tren Penggunaan Sepeda Seiring Waktu:")
     fig, ax = plt.subplots(figsize=(12, 8))
-    sns.lineplot(data=df, x='dteday', y='cnt', ax=ax)
+    sns.lineplot(data=df, x=date_col, y='cnt', ax=ax)
     ax.set_title('Tren Penggunaan Sepeda Seiring Waktu')
     ax.set_xlabel('Tanggal')
     ax.set_ylabel('Jumlah Peminjaman Sepeda')
