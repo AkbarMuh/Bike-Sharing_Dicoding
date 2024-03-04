@@ -21,7 +21,7 @@ Proyek ini bertujuan untuk menganalisis data penggunaan sepeda menggunakan Pytho
 5. Jalankan perintah berikut untuk menjalankan aplikasi:
 
     ```
-    streamlit run bike_sharing_dicoding_subbmission-Streamlit.py
+    streamlit run ./dashboard/dashboard.py
     ```
 
 6. Setelah menjalankan perintah tersebut, aplikasi akan terbuka di browser default Anda. Anda dapat mengunggah file CSV atau menggunakan data default untuk melakukan analisis.
