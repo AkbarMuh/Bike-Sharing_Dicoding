@@ -55,8 +55,6 @@ if file is not None or st.session_state.use_default_data:
     df = load_data(file)
     # Data Wrangling
     st.subheader("Data Wrangling")
-    st.write("Informasi Dataset:")
-    st.write(df.info())
     st.write("\nBeberapa Baris Pertama Dataset:")
     st.write(df.head())
     missing_values = df.isnull().sum()
