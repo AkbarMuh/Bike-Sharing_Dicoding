@@ -4,6 +4,7 @@
 - **Nama:** Akbar Muhammad Prakoso
 - **Email:** akbar.muhammt@gmail.com
 - **ID Dicoding:** akbarmuh
+  
 Proyek ini bertujuan untuk menganalisis data penggunaan sepeda menggunakan Python dan beberapa library seperti Pandas, Matplotlib, Seaborn, dan Streamlit. Data yang digunakan berasal dari file CSV yang berisi informasi tentang penggunaan sepeda dalam rentang waktu tertentu.
 
 ## Cara Menjalankan Aplikasi
