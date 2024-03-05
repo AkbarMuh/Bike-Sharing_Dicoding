@@ -51,7 +51,7 @@ file = st.file_uploader("Upload file CSV:")
 st.checkbox("Mau Menggunakan Data Default ?", False, key='use_default_data')
 if file is not None or st.session_state.use_default_data:
     if st.session_state.use_default_data:
-        file = "./dashboard/all_data.csv"
+        file = "./dashboard/all_data.csv" e
     df = load_data(file)
     # Data Wrangling
     st.subheader("Data Wrangling")
